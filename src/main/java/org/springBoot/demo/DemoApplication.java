@@ -10,7 +10,6 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 }
-
 /*
     core - validation and lombok
     web - rest repositories & jersey
