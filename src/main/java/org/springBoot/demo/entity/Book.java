@@ -23,7 +23,7 @@ import org.hibernate.annotations.CreationTimestamp;
  *
  * @author ayojava
  */
-@Data
+@Data   
 @Entity
 @JsonIgnoreProperties(value = {"createDate"})
 public class Book implements Serializable {
