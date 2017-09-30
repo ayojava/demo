@@ -33,6 +33,7 @@ public class Book implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
+    
     private String bookName;
     
     private String bookAuthor;
