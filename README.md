@@ -9,10 +9,11 @@ Demo application using SpringBoot , Spring Rest , Spring Data, MySQL, JPA, Hiber
 
 3- Mysql - 5.x.x
 
-4- Netbeans IDE 8.x (Optiona or any IDE of choice)
+4- Netbeans IDE 8.x (Optional or any IDE of choice)
 
 # Setup
 
+1- Clone the application : https://github.com/ayojava/demo.git
 
 
 
