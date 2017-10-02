@@ -16,6 +16,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -25,7 +26,6 @@ import org.hibernate.annotations.CreationTimestamp;
  */
 @Data   
 @Entity
-@JsonIgnoreProperties(value = {"createDate"})
 public class Book implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -33,17 +33,17 @@ public class Book implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
-    
+    @NotNull
     private String bookName;
     
+    @NotNull
     private String bookAuthor;
     
+    @NotNull
     private String publisherName;
-    
-    private String bookISBN;
-    
-    @ManyToOne
-    private BookShelve bookShelve;
+        
+    @NotNull
+    private String shelveCode;
     
     @Temporal(TemporalType.TIMESTAMP)
     @Column(updatable = false)

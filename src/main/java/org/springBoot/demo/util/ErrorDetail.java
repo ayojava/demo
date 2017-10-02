@@ -16,6 +16,10 @@ import lombok.Data;
 @Data
 public class ErrorDetail {
     
+    public ErrorDetail(){
+        localDateTime = LocalDateTime.now();
+    }
+    
     /**
      * provides a brief title of the Error Condition
      */
@@ -32,9 +36,9 @@ public class ErrorDetail {
     private String detail;
     
     /**
-     * Time in millisecods when the error occured
+     * Time when error occurred
      */
-    private LocalDateTime timestamp;
+    private LocalDateTime localDateTime;
     
     /**
      * info such as exception class name or stack trace

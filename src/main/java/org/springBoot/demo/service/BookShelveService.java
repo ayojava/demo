@@ -5,6 +5,8 @@
  */
 package org.springBoot.demo.service;
 
+import java.util.List;
+import org.springBoot.demo.entity.BookShelve;
 import org.springBoot.demo.repository.BookShelveRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,4 +26,22 @@ public class BookShelveService {
     public BookShelveService(BookShelveRepository bookShelveRepository){
         this.bookShelveRepository = bookShelveRepository;
     }
+    
+    public BookShelve saveBookShelve(BookShelve bookShelve){
+        return bookShelveRepository.save(bookShelve);
+    }
+    
+    public BookShelve findABookShelve(Long shelveID){
+        return bookShelveRepository.findOne(shelveID);
+    }
+    
+    public Long bookShelveCount(){
+        return bookShelveRepository.count();
+    }
+    
+    public List<BookShelve> findAll(){
+        return bookShelveRepository.findBookShelveByOrderByShelveNameAsc();
+    }
+    
+    
 }

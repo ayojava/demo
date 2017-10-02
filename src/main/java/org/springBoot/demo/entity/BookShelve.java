@@ -19,6 +19,8 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import lombok.Data;
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 import org.hibernate.annotations.CreationTimestamp;
 
 /**
@@ -27,7 +29,6 @@ import org.hibernate.annotations.CreationTimestamp;
  */
 @Data
 @Entity
-@JsonIgnoreProperties(value = {"createDate"})
 public class BookShelve implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -41,11 +42,11 @@ public class BookShelve implements Serializable {
     @NotNull
     private String shelveCode;
     
+    @NotNull
     private String description;
-    
-    private Long bookCopies;
-    
-    @OneToMany(mappedBy = "bookShelve")
+        
+    @Cascade(CascadeType.DELETE)
+    @OneToMany()
     private List<Book> allBooks;
 
     @Temporal(TemporalType.TIMESTAMP)
