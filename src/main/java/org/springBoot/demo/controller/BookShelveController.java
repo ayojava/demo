@@ -40,11 +40,8 @@ public class BookShelveController {
     
     @GetMapping("/id/{bookShelveId}")
     public BookShelve findBookShelveById(@PathVariable Long bookShelveId) throws ResourceNotFoundException{
-        BookShelve bookShelveObj = bookShelveService.findABookShelve(bookShelveId);
-        if(bookShelveObj == null){
-            throw new ResourceNotFoundException("BookShelve with id [" + bookShelveId + " ] not found " );
-        }
-        return bookShelveObj;
+        return bookShelveService.findABookShelve(bookShelveId).
+                orElseThrow(() -> new ResourceNotFoundException("BookShelve with id [" + bookShelveId + " ] not found " ));
     }
     
     @GetMapping("/all")

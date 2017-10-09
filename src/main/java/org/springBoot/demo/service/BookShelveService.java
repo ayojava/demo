@@ -6,6 +6,7 @@
 package org.springBoot.demo.service;
 
 import java.util.List;
+import java.util.Optional;
 import org.springBoot.demo.entity.BookShelve;
 import org.springBoot.demo.repository.BookShelveRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,8 +32,8 @@ public class BookShelveService {
         return bookShelveRepository.save(bookShelve);
     }
     
-    public BookShelve findABookShelve(Long shelveID){
-        return bookShelveRepository.findOne(shelveID);
+    public Optional<BookShelve> findABookShelve(Long shelveID){
+        return bookShelveRepository.findBookShelveById(shelveID);
     }
     
     public Long bookShelveCount(){

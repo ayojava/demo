@@ -5,7 +5,7 @@
  */
 package org.springBoot.demo.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -49,6 +49,7 @@ public class BookShelve implements Serializable {
     @OneToMany()
     private List<Book> allBooks;
 
+    @JsonFormat(pattern = "dd/MM/yyyy")
     @Temporal(TemporalType.TIMESTAMP)
     @Column(updatable = false)
     @CreationTimestamp
